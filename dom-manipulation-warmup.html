@@ -5,7 +5,7 @@
     <title>DOM Manipulation Warm Up</title>
     <style>
         body {
-            background: #999;
+            background: white;
         }
     </style>
 </head>
@@ -21,10 +21,32 @@
         </div>
     </form>
     <br>
-    <button id="disappear-btn" type="button">Disappear</button>
+    <button id="disappear-btn" type="button">Turn Green</button>
 </div>
 
 <h1>This text will never disappear.</h1>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script>
+    (() => {
+        "use strict";
+        $(document).ready(function(){
+
+            $('#update-color-btn').click(function(){
+              var colorInput = $('#color-spec').val()
+                $('#color').text(colorInput).css('color',colorInput)
+            })
+
+            $('#disappear-btn').click(function (){
+                $('div').css('color','green')
+            })
+
+
+
+
+        })
+    })()
+</script>
 
 </body>
 </html>
